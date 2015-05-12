@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
 
 	<link rel="stylesheet" href="build/css/autogeo.css">
 
@@ -11,12 +12,35 @@
 	<title>AutoGeo APP</title>
 </head>
 <body ng-app="AutoGeoAPP">
-	<div ng-controller="MainCtrl">
-		<h1>Hello World</h1>
-		<button class="btn btn-primary" ng-click="add()">
-			<span class="glyphicon glyphicon-user"></span>
-			Novo
-		</button>
+	<div ng-controller="MainCtrl" class="container-fluid" id="containerGeral">
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-6">
+				<div id="logo"></div>
+			</div>
+			<div class="hidden-xs col-sm-8 col-md-8 col-lg-6">
+				<div id="menu">
+					<a href="#">Favoritos</a>
+					<a href="#">Likes</a>
+					<a href="#">Anuncie</a>
+					<a href="#">Cadastro</a>
+				</div>
+			</div>
+			<div id="menuMobile" class="visible-xs-block" toggle-menu-icon teste="enableMenu">
+				<span class="glyphicon glyphicon-menu-hamburger blue"></span>
+				Menu
+			</div>
+			<div my-directive class='directive'></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12" id="menuOptionsMobile" ng-show="teste">
+				<ul>
+					<li><a href="#">Favoritos</a></li>
+					<li><a href="#">Likes</a></li>
+					<li><a href="#">Anuncie</a></li>
+					<li><a href="#">Cadastro</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
