@@ -21,6 +21,6 @@ app.directive('toggleMenuIcon', function (){
 				scope.enableMenu = !scope.enableMenu
 			});
 
-		} 	
+		}	
 	}
 });
