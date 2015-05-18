@@ -1,19 +1,71 @@
 *{
 	margin: 0;
 	padding: 0;
-	font-family: "Open Sans",Helvetica,Arial,sans-serif;
-  	-webkit-font-smoothing: antialiased;
-	background: #FEFEFE;
-	color: #333333;
 }
-#containerGeral{
-	width: 100%;
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #FEFEFE;
+	padding-top: 140px;
+}
+.row{
+	margin: 0;
+	padding: 0;
+}
+html, body, #containerMap, .containerApp{
 	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }
-.rowHeader{
+.angular-leaflet-map,#containerMap{
+	width: auto;
+	height: 100%;
+	margin: 0 -15px 0 -15px;
+}
+.angular-leaflet-map{
+	margin: 0;
+}
+header{
+	width: 100%;
+	height: 140px;
+	position: fixed;
+	z-index: 1500;
+	top: 0;
+	margin: 0 -15px 0 -15px;
 	border-bottom: 1px solid #e5e5e5;
-	min-height: 80px;
-	max-height: 80px;
+}
+
+#containerBusca{
+	border-top: 1px solid #e5e5e5;
+	float: left;
+	width: 100%;
+}
+#buscaTopo{
+	margin: 12px auto;	
+	width: 50%;
+}
+#filtroTopo{
+	border-right: 1px solid #e5e5e5;
+	float: left;
+	height: 59px;
+	font-weight: bold;
+	line-height: 59px;
+}
+#setaFiltro{
+	float: right;
+	line-height: 59px;
+	cursor: pointer;
+	color: #007CC6;
+	margin-right: -15px;
+	width: 40px;
+	text-align: center;
+}
+#setaFiltro:hover{
+	background-color: #007CC6;
+	color: #FFF;
 }
 #logo{
 	width: 180px;
@@ -32,13 +84,15 @@
 	height: 79px;
 	line-height: 79px;
 	font-size: 14px;
-	color: #027BC3;
-	font-weight: 600;
+	font-weight: normal;
 	margin-left: 25px;
+	color: #333;
+	font-weight: bold;
 }
 #menu a:hover{
 	text-decoration: none;
-	border-bottom: 4px solid #027BC3;
+	border-bottom: 2px solid #007CC6;
+	color: #007CC6;
 }
 #menuMobile{
 	padding: 7px;
@@ -64,6 +118,10 @@
 #menuOptionsMobile{
 	border-top: 1px solid #e5e5e5;
 	min-height: 50px;
+	position: absolute;
+	z-index: 2000;
+	top: 79px;
+	background-color: transparent;
 }
 #menuOptionsMobile ul{
 	width: 100%;
@@ -78,6 +136,7 @@
 	line-height: 40px;
 	border: 1px solid #e5e5e5;
 	border-top: none;
+	background-color: #FEFEFE;
 }
 #menuOptionsMobile ul li a{
 	text-decoration: none;
@@ -89,6 +148,9 @@
 }
 #menuOptionsMobile ul li:hover{
 	background: #f1f1f1;
+}
+.txtBtnMenu{
+	margin-left: 5px;
 }
 
 @media (max-width: 767px) {

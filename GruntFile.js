@@ -14,13 +14,17 @@ module.exports = function (grunt)
 				src: [
 					'bower_components/jquery/dist/jquery.min.js',
 					'bower_components/bootstrap/dist/js/bootstrap.min.js',
+					'bower_components/leaflet/dist/leaflet.js',
 					'bower_components/angularjs/angular.min.js',
+					'bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js'
 				],
 				dest: 'build/js/<%= pkg.name %>-deps.js'
 			},
 			css: {
-				src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-						'src/css/custom-styles.css'
+				src: [
+					'bower_components/bootstrap/dist/css/bootstrap.min.css',
+					'bower_components/leaflet/dist/leaflet.css',
+					'src/css/custom-styles.css'
 				],
 				dest: 'build/css/<%= pkg.name %>.css'
 			},

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
 
 	<link rel="stylesheet" href="build/css/autogeo.css">
 
@@ -12,39 +12,45 @@
 	<title>AutoGeo APP</title>
 </head>
 <body ng-app="AutoGeoAPP">
-	<div ng-controller="MainCtrl" class="container-fluid" id="containerGeral">
+	<div ng-controller="MainCtrl" class="container containerApp">
 		<header>
-			<div class="row rowHeader">
-				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-6">
-					<div id="logo">
-						<img src="build/img/autogeo.png" alt="logo" id="imgLogo" width="180" height="59">
-					</div>
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-6">
+				<div id="logo">
+					<img src="build/img/autogeo.png" alt="logo" id="imgLogo" width="180" height="59">
 				</div>
-				<div class="hidden-xs col-sm-8 col-md-8 col-lg-6">
-					<div id="menu">
-						<a href="#">Favoritos</a>
-						<a href="#">Likes</a>
-						<a href="#">Anuncie</a>
-						<a href="#">Cadastro</a>
-					</div>
-				</div>
-				<div id="menuMobile" class="visible-xs-block" toggle-menu-icon>
-					<span class="glyphicon glyphicon-menu-hamburger blue"></span>
-					Menu {{enableMenu}}
-				</div>
-				<div my-directive class='directive'></div>
 			</div>
-			<div class="row">
-				<div class="col-xs-12" id="menuOptionsMobile" ng-show="enableMenu">
-					<ul>
-						<li><a href="#">Favoritos</a></li>
-						<li><a href="#">Likes</a></li>
-						<li><a href="#">Anuncie</a></li>
-						<li><a href="#">Cadastro</a></li>
-					</ul>
+			<div class="hidden-xs col-sm-8 col-md-8 col-lg-6">
+				<div id="menu">
+					<a href="#">Favoritos</a>
+					<a href="#">Likes</a>
+					<a href="#">Anuncie</a>
+					<a href="#">Cadastro</a>
+				</div>
+			</div>
+			<toggle-menu-icon></toggle-menu-icon>
+			<div class="col-xs-12" id="menuOptionsMobile" ng-show="enableMenu">
+				<ul>
+					<li><a href="#">Favoritos</a></li>
+					<li><a href="#">Likes</a></li>
+					<li><a href="#">Anuncie</a></li>
+					<li><a href="#">Cadastro</a></li>
+				</ul>
+			</div>
+			<div class="row" id="containerBusca">
+				<div class="hidden-xs col-sm-4 col-md-6 col-lg-3" id="filtroTopo">
+					<!-- <span class="glyphicon glyphicon-filter"></span> -->
+					<span>Nenhum filtro ativo</span>
+					<span class="glyphicon glyphicon-menu-down" id="setaFiltro"></span>
+				</div>
+				<div class="col-sm-8 col-md-6 col-lg-9">
+					<input type="text" class="form-control" id="buscaTopo" placeholder="Faça sua busca aqui" >
 				</div>
 			</div>
 		</header>
+		<div id="containerMap">
+			<leaflet center="poa" defaults="defaults" geojson="poaBairros">
+			</leaflet>
+		</div>
 	</div>
 </body>
 </html>
