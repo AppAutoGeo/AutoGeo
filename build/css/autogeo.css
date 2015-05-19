@@ -489,7 +489,7 @@
 	padding: 0;
 }
 body{
-	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: 'Ubuntu Condensed', sans-serif, arial;
 	-webkit-font-smoothing: antialiased;
 	font-size: 14px;
 	line-height: 1.42857143;
@@ -525,44 +525,47 @@ header{
 }
 
 #containerBusca{
-	border-top: 1px solid #e5e5e5;
+	background-color: #007DC6;
 	float: left;
 	width: 100%;
 }
 #buscaTopo{
 	margin: 12px auto;	
 	width: 50%;
+	float: right;
+	color: #00529C;
 }
 #filtroTopo{
-	border-right: 1px solid #e5e5e5;
 	float: left;
 	height: 59px;
 	font-weight: bold;
 	line-height: 59px;
+	color: #FFF;
 }
 #setaFiltro{
 	float: right;
 	line-height: 59px;
 	cursor: pointer;
-	color: #007CC6;
+	color: #FFF;
 	margin-right: -15px;
 	width: 40px;
 	text-align: center;
 }
 #setaFiltro:hover{
-	background-color: #007CC6;
+	background-color: #00529C;
+	height: 58px;
 	color: #FFF;
 }
 #logo{
-	width: 180px;
-	height: 59px;
-	margin-top: 10px;
+	width: 200px;
+	height: 35px;
+	margin-top: 25px;
 }
 #logo:hover{
 	cursor: pointer;
 }
 #menu{
-	float: right;
+	float: left;
 }
 #menu a{
 	float: left;
@@ -572,13 +575,29 @@ header{
 	font-size: 14px;
 	font-weight: normal;
 	margin-left: 25px;
-	color: #333;
+	color: #007CC6;
 	font-weight: bold;
+	padding-top: 3px;
+	text-decoration: none;
 }
+#menu a span{
+	float: left;
+	margin-right: 10px;
+	line-height: 75px;
+	height: 75px;
+}
+#menu a.ativo{
+	text-decoration: none;
+	border-top: 3px solid #007CC6;
+	color: #007CC6;
+	padding-top: 0;
+}
+
 #menu a:hover{
 	text-decoration: none;
-	border-bottom: 2px solid #007CC6;
+	border-top: 3px solid #007CC6;
 	color: #007CC6;
+	padding-top: 0;
 }
 #menuMobile{
 	padding: 7px;
@@ -644,4 +663,32 @@ header{
     margin: 10px auto auto auto;
     float: none;
   }
+}
+.userImg{
+	border: 1px solid #C7C7C7;
+	border-radius: 50%;
+	float: right;
+	width: 52px;
+	height: 52px;
+	margin: 10px 8px 0 8px;
+}
+
+.userLogged{
+	float: right;
+	width: auto;
+	height: 79px;
+	line-height: 79px;
+	text-align: center;
+	color: #00529C;
+	font-size: 13px;
+	display: block;
+	font-style: italic;
+	font-weight: bold;
+}
+.userConfig{
+	float: right;
+	line-height: 79px;
+	text-align: center;
+	color: #00529C;
+	display: block;
 }
