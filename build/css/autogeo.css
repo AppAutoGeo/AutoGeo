@@ -484,12 +484,17 @@
 	}
 
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 *{
 	margin: 0;
 	padding: 0;
+	font-family: 'Open Sans', sans-serif, Arial;
+	-webkit-font-smoothing: antialiased;
 }
 body{
-	font-family: 'Ubuntu Condensed', sans-serif, arial;
+	/*font-family: 'Ubuntu Condensed', sans-serif, arial;*/
+	font-family: 'Open Sans', sans-serif, Arial;
 	-webkit-font-smoothing: antialiased;
 	font-size: 14px;
 	line-height: 1.42857143;
@@ -533,7 +538,10 @@ header{
 	margin: 12px auto;	
 	width: 50%;
 	float: right;
-	color: #00529C;
+	color: #333333;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	box-shadow: none;
 }
 #filtroTopo{
 	float: left;
@@ -665,12 +673,14 @@ header{
   }
 }
 .userImg{
-	border: 1px solid #C7C7C7;
-	border-radius: 50%;
 	float: right;
 	width: 52px;
 	height: 52px;
 	margin: 10px 8px 0 8px;
+}
+.userImg img{
+	border: 1px solid #C7C7C7;
+	border-radius: 50%;
 }
 
 .userLogged{
@@ -681,9 +691,6 @@ header{
 	text-align: center;
 	color: #00529C;
 	font-size: 13px;
-	display: block;
-	font-style: italic;
-	font-weight: bold;
 }
 .userConfig{
 	float: right;
@@ -691,4 +698,87 @@ header{
 	text-align: center;
 	color: #00529C;
 	display: block;
+	cursor: pointer;
+}
+
+/*
+	LEAFLET
+*/
+.leaflet-popup-content{
+	/*width: 650px;*/
+	height: auto;
+	float: left;
+}
+.leaflet-popup-content-wrapper{
+	border-top: 3px solid #0B59A0;
+  	border-radius: 3px;
+  	float: left;
+}
+.tituloValor{
+	float: left;
+	padding:10px;
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 25px;
+	color: #3E6B9A;
+	width: auto;
+	border-right: 1px solid #B1BAC2;
+}
+.tituloModelo{
+	float: left;
+	padding:10px;
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 25px;
+	color: #3E6B9A;
+	width: auto;
+}
+.tituloMarca{
+	float: left;
+	padding:2px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 32px;
+	color: #848484;
+	width: auto;
+}
+.tituloDescricao{
+	width: 100%;
+	border-bottom: 1px solid #B1BAC2;
+	float: left;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 16px;
+	color: #3E6B9A;
+	float: left;
+	padding: 10px 0 10px 0;
+	margin-bottom: 5px;
+}
+.ulDetalhes{
+	float: left;
+	width: 100%;
+	list-style: none;
+	margin: 10px 0 5px 0;
+}
+.ulDetalhes li{
+	display: inline;
+	line-height: 35px;
+	height: 35px;
+	float: left;
+	font-size: 12px;
+	color: #3E6B9A;
+	padding-right: 5px;
+	padding-left: 10px;
+	padding-top: 3px;
+}
+.ulDetalhes li.ativo{
+	border-top: 3px solid #007DC6;
+	padding-top: 0;
+}
+.leaflet-popup-content p.descricaoDetalhes{
+	float: left;
+	padding: 2px;
+	margin: 0px;
+	width: 100%;
+	float: left;
 }

@@ -4,13 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
 
+	<link rel="shortcut icon" href="build/img/favicon.png" type="image/x-icon">
+	<link rel="icon" href="build/img/favicon.png" type="image/x-icon">
+
 	<link rel="stylesheet" href="build/css/autogeo.css">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 	<script src="build/js/autogeo-deps.js"></script>
 	<script src="build/js/autogeo.js"></script>
 
-	<title>AutoGeo APP</title>
+	<title>AutoGeo - Sistema de Anúncio de Automóveis</title>
 </head>
 <body ng-app="AutoGeoAPP">
 	<div ng-controller="MainCtrl" class="container containerApp">
@@ -30,11 +34,11 @@
 				</div>
 			</div>
 			<div class="hidden-xs col-sm-1 col-md-2 col-lg-2">
-				<span class="userConfig glyphicon glyphicon-cog"></span>
-				<span class="userImg hidden-sm">
-					<img src="build/img/user.png" alt="user" width="50" height="50">
-				</span>
-				<span class="userLogged hidden-sm">Manolo</span>
+				<!-- <span class="userConfig glyphicon glyphicon-cog"></span> -->
+				<!-- <span class="userImg hidden-sm"> -->
+					<!-- <img src="build/img/user.png" alt="user" width="50" height="50"> -->
+				<!-- </span> -->
+				<!-- <span class="userLogged hidden-sm">Manolo</span> -->
 			</div>
 			<toggle-menu-icon></toggle-menu-icon>
 			<div class="col-xs-12" id="menuOptionsMobile" ng-show="enableMenu">
@@ -58,7 +62,7 @@
 			</div>
 		</header>
 		<div id="containerMap">
-			<leaflet center="poa" defaults="defaults" geojson="carros">
+			<leaflet center="poa" defaults="defaults" markers="markers">
 			</leaflet>
 		</div>
 	</div>

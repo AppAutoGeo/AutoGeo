@@ -1,1 +1,329 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"ano":2010,"modelo":"Gol","marca":"Wolkswagen","km":"25.000","cor":"prata"},"geometry":{"type":"Point","coordinates":[-51.227858662605286,-30.032838809330116]}},{"type":"Feature","properties":{"ano":2011,"modelo":"Cruze","marca":"Chevrolet","km":"75.000","cor":"branco"},"geometry":{"type":"Point","coordinates":[-51.22779697179794,-30.032311693018073]}},{"type":"Feature","properties":{"ano":2002,"modelo":"Corsa","marca":"Chevrolet","km":"35.000","cor":"vermelho"},"geometry":{"type":"Point","coordinates":[-51.225342750549316,-30.02968071373853]}},{"type":"Feature","properties":{"ano":2010,"modelo":"Gol","marca":"Wolkswagen","km":"62.000","cor":"azul"},"geometry":{"type":"Point","coordinates":[-51.23263835906982,-30.030962541140706]}},{"type":"Feature","properties":{"ano":2003,"modelo":"Civic","marca":"Honda","km":"88.000","cor":"preto"},"geometry":{"type":"Point","coordinates":[-51.22956991195679,-30.03150127524609]}},{"type":"Feature","properties":{"ano":2008,"modelo":"Civic","marca":"Honda","km":"35.000","cor":"branco"},"geometry":{"type":"Point","coordinates":[-51.224025785923004,-30.034422463500142]}},{"type":"Feature","properties":{"ano":2010,"modelo":"i30","marca":"Hyundai","km":"32.000","cor":"vermelho"},"geometry":{"type":"Point","coordinates":[-51.234934329986565,-30.0338791011382]}},{"type":"Feature","properties":{"ano":2015,"modelo":"Onix","marca":"Chevrolet","km":"0.000","cor":"cinza"},"geometry":{"type":"Point","coordinates":[-51.2325793504715,-30.035836584911703]}},{"type":"Feature","properties":{"ano":2014,"modelo":"Fiesta","marca":"Ford","km":"15.000","cor":"azul"},"geometry":{"type":"Point","coordinates":[-51.22251033782959,-30.037924060590075]}}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2010,
+        "modelo": "Gol",
+        "marca": "Wolkswagen",
+        "km": "25000.00",
+        "cor": "prata",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.227858662605286,
+          -30.032838809330116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2011,
+        "modelo": "Cruze",
+        "marca": "Chevrolet",
+        "km": "75.000",
+        "cor": "branco",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.22779697179794,
+          -30.032311693018073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2002,
+        "modelo": "Corsa",
+        "marca": "Chevrolet",
+        "km": "35.000",
+        "cor": "vermelho",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.225342750549316,
+          -30.02968071373853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2010,
+        "modelo": "Gol",
+        "marca": "Wolkswagen",
+        "km": "62.000",
+        "cor": "azul",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.23263835906982,
+          -30.030962541140706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2003,
+        "modelo": "Civic",
+        "marca": "Honda",
+        "km": "88.000",
+        "cor": "preto",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.22956991195679,
+          -30.03150127524609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2008,
+        "modelo": "Civic",
+        "marca": "Honda",
+        "km": "35.000",
+        "cor": "branco",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.224025785923004,
+          -30.034422463500142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2010,
+        "modelo": "i30",
+        "marca": "Hyundai",
+        "km": "32.000",
+        "cor": "vermelho",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.234934329986565,
+          -30.0338791011382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2015,
+        "modelo": "Onix",
+        "marca": "Chevrolet",
+        "km": "0.000",
+        "cor": "cinza",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.2325793504715,
+          -30.035836584911703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2014,
+        "modelo": "Fiesta",
+        "marca": "Ford",
+        "km": "15.000",
+        "cor": "azul",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.22251033782959,
+          -30.037924060590075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2010,
+        "modelo": "Cobalt",
+        "marca": "Chevrolet",
+        "km": "32.000",
+        "cor": "roxo",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.199936866760254,
+          -30.01936047039347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2008,
+        "modelo": "Fusion",
+        "marca": "Ford",
+        "km": "65.000",
+        "cor": "preto",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.20504379272461,
+          -30.03462216002981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2011,
+        "modelo": "Corolla",
+        "marca": "Toyota",
+        "km": "45.000",
+        "cor": "prata",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.223615407943726,
+          -30.04512655891128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2012,
+        "modelo": "Corolla",
+        "marca": "Toyota",
+        "km": "25000.00",
+        "cor": "branco",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.20876133441925,
+          -30.01421388105738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2015,
+        "modelo": "ix35",
+        "marca": "Hyundai",
+        "km": "36.000",
+        "cor": "prata",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.21482849121094,
+          -30.02317843539057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2000,
+        "modelo": "Golf",
+        "marca": "Wolkswagen",
+        "km": "80.000",
+        "cor": "verde",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.19827926158905,
+          -30.01371685874006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2002,
+        "modelo": "Focus",
+        "marca": "Ford",
+        "km": "54.000",
+        "cor": "preto",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.195792853832245,
+          -30.026060390667755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 1998,
+        "modelo": "Golf",
+        "marca": "Wolkswagen",
+        "km": "80.000",
+        "cor": "azul",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.1907958984375,
+          -30.041012236500762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ano": 2015,
+        "modelo": "Celta",
+        "marca": "Chevrolet",
+        "km": "8.000",
+        "cor": "vermelho",
+        "valor": 25000.00
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -51.21084004640579,
+          -30.0408288061844
+        ]
+      }
+    }
+  ]
+}

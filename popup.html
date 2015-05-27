@@ -1,0 +1,66 @@
+<span class="tituloValor">{{anuncio.properties.valor | currency: 'R$'}}</span>
+<span class="tituloModelo">{{anuncio.properties.modelo}}</span>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:300px;float:left;clear:both;margin-top:20px;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="build/img/car.jpg" alt="carro" width="320" height="150">
+    </div>
+
+    <div class="item">
+      <img src="build/img/car.jpg" alt="carro" width="320" height="150">
+    </div>
+
+    <div class="item">
+      <img src="build/img/car.jpg" alt="carro" width="320" height="150">
+    </div>
+
+    <div class="item">
+      <img src="build/img/car.jpg" alt="carro" width="320" height="150">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Próximo</span>
+  </a>
+</div>
+
+<ul class="ulDetalhes">
+	<li class="ativo">Descrição</li>
+	<li>Acessórios</li>
+	<li>Contato</li>
+</ul>
+<p class="descricaoDetalhes">
+	<strong>MARCA: </strong>{{anuncio.properties.marca}}
+</p>
+<p class="descricaoDetalhes">
+	<strong>MODELO: </strong>{{anuncio.properties.modelo}}
+</p>
+<p class="descricaoDetalhes">
+	<strong>ANO: </strong>{{anuncio.properties.ano}}
+</p>
+<p class="descricaoDetalhes">
+	<strong>KM: </strong>{{anuncio.properties.km}}
+</p>
+<p class="descricaoDetalhes">
+	<strong>COR: </strong>{{anuncio.properties.cor}}
+</p>
+<p class="descricaoDetalhes">
+	<strong>VALOR: </strong>{{anuncio.properties.valor | currency: 'R$'}}
+</p>
+
