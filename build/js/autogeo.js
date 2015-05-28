@@ -1,6 +1,6 @@
-var app = angular.module('AutoGeoAPP', ["leaflet-directive"]);
+var app = angular.module('AutoGeoAPP', ["leaflet-directive", "ngResource"]);
 
-app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'ServicoAnuncios', function($scope, $http, $filter, $rootScope, ServicoAnuncios) {
+app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'ServicoAnuncios', '$resource', function($scope, $http, $filter, $rootScope, ServicoAnuncios, $resource) {
     
     var icon = {  
         iconUrl:'build/img/marker-icon.png',
@@ -47,7 +47,7 @@ app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'Servic
         },
         defaults: {
             scrollWheelZoom: true
-        },
+        }
     });
 
     /*$scope.$watch('search', function (newVal, oldVal) {

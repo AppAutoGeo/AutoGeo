@@ -16,7 +16,8 @@ module.exports = function (grunt)
 					'bower_components/bootstrap/dist/js/bootstrap.min.js',
 					'bower_components/leaflet/dist/leaflet.js',
 					'bower_components/angularjs/angular.min.js',
-					'bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js'
+					'bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js',
+					'bower_components/angular-resource/angular-resource.min.js'
 				],
 				dest: 'build/js/<%= pkg.name %>-deps.js'
 			},

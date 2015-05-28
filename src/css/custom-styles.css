@@ -47,6 +47,7 @@ header{
 	background-color: #007DC6;
 	float: left;
 	width: 100%;
+	border-bottom: 2px solid #007DC6;
 }
 #buscaTopo{
 	margin: 12px auto;	
@@ -295,4 +296,37 @@ header{
 	margin: 0px;
 	width: 100%;
 	float: left;
+}
+#containerFiltros{
+	background-color: #00528E;
+	width: 326px;
+	height: 100%;
+	float: left;
+}
+
+#containerFiltros ul{
+	float: left;
+	width: 100%;
+	list-style: none;
+	margin: 0px;
+}
+#containerFiltros ul li{
+	cursor: pointer;
+	display: block;
+	line-height: 60px;
+	height: 60px;
+	float: left;
+	font-size: 12px;
+	text-transform: uppercase;
+	color:#FFF;
+	width: 100%;
+	padding-left: 15px;
+	border-bottom: 1px solid #004679;
+	box-shadow: 1px 1px 1px #0B5D98;
+}
+#containerFiltros ul li .seta{
+	float: right;
+	margin-right: 15px;
+	line-height: 60px;
+	text-align: center;
 }
