@@ -10,33 +10,23 @@ app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'Servic
 
     $scope.enableMenu = false;
     $scope.search = '';
-    $scope.markers = [];
+    $scope.anunciosMarkers = [];
+    $scope.anunciosMarkers2 = [];
+    $scope.searchObj = {modelo: "", cor: ""};
     
     var promiseAnuncios = ServicoAnuncios.getAnuncios();
     promiseAnuncios.then(function(data) {
         $rootScope.anuncios = data.anuncios;
         angular.forEach(data.anuncios, function(anuncio, i) {
-            
-            $scope.markers.push({
+            $scope.anunciosMarkers.push({
                 lat: anuncio.geometry.coordinates[1], 
                 lng: anuncio.geometry.coordinates[0], 
                 message: "<popup anuncio='anuncios[" + i + "]'></popup>",
-                popupOptions: {minWidth: 300, maxWidth: 300}
+                popupOptions: {minWidth: 300, maxWidth: 300},
+                props: anuncio.properties
             });
         });
-    });
-
-    var url = 'data/json/carros.json';
-    $http.get(url).success(function(anuncios){
-        angular.forEach(anuncios.features, function(anuncio, i) {
-            $scope.markers.push({
-                lat: anuncio.geometry.coordinates[0], 
-                lng: anuncio.geometry.coordinates[1], 
-                message: "<popup anuncio='anuncios[" + i + "]'></popup>"
-            });
-        });
-    }).error(function(msg, code) {
-        console.log(msg+code);
+        $scope.anunciosMarkers2 = $scope.anunciosMarkers;
     });
 
     angular.extend($scope, {
@@ -50,13 +40,49 @@ app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'Servic
         }
     });
 
-    /*$scope.$watch('search', function (newVal, oldVal) {
-      if (newVal !== oldVal && newVal !== '') {
-        $scope.carros.data = $filter('filter')($scope.data, 'modelo', newVal);
-      } else {
-        $scope.carros.data = $scope.data;
-      }
-    });*/
+    $scope.$watch('search', function (newVal, oldVal) {
+        if (newVal !== oldVal && newVal !== '') {
+            $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, 'modelo', newVal);
+        } else {
+            console.log('else');
+            if($scope.anunciosMarkers.length < $scope.anunciosMarkers2.length){
+                var promiseAnuncios = ServicoAnuncios.getAnuncios();
+                promiseAnuncios.then(function(data) {
+                    $rootScope.anuncios = data.anuncios;
+                    angular.forEach(data.anuncios, function(anuncio, i) {
+                        $scope.anunciosMarkers.push({
+                            lat: anuncio.geometry.coordinates[1], 
+                            lng: anuncio.geometry.coordinates[0], 
+                            message: "<popup anuncio='anuncios[" + i + "]'></popup>",
+                            popupOptions: {minWidth: 300, maxWidth: 300},
+                            props: anuncio.properties
+                        });
+                    });
+                });
+            }
+        }
+    });
+
+    $scope.filtrarAnuncio = function(campo, text){
+        $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, campo, text);
+    };
+    $scope.limparFiltros = function(){
+        console.log($scope.anunciosMarkers.length);
+        console.log($scope.anunciosMarkers2.length);
+        var promiseAnuncios = ServicoAnuncios.getAnuncios();
+        promiseAnuncios.then(function(data) {
+            $rootScope.anuncios = data.anuncios;
+            angular.forEach(data.anuncios, function(anuncio, i) {
+                $scope.anunciosMarkers.push({
+                    lat: anuncio.geometry.coordinates[1], 
+                    lng: anuncio.geometry.coordinates[0], 
+                    message: "<popup anuncio='anuncios[" + i + "]'></popup>",
+                    popupOptions: {minWidth: 300, maxWidth: 300},
+                    props: anuncio.properties
+                });
+            });
+        });
+    };
     
 
 }]);
@@ -83,17 +109,17 @@ app.directive('toggleMenuIcon', function (){
 });
 
 app.filter('filter', [function() {
-  return function(geojson, searchProperty, searchValue) {
-    console.log('Matches:');
-    var matches = {'type': 'FeatureCollection', 'features': []};
-    angular.forEach(geojson.features, function(featureObject, featureKey) {
-      if (featureObject.properties.hasOwnProperty(searchProperty)) {
-        var property = featureObject.properties[searchProperty].toLowerCase();
+  return function(markers, searchProperty, searchValue) {
+    var matches = [];
+    angular.forEach(markers, function(marker, featureKey) {
+      if (marker.props.hasOwnProperty(searchProperty)) {
+        var property = marker.props[searchProperty].toLowerCase();
         var search = searchValue.toLowerCase();
         if (property.indexOf(search) > -1) {
-          matches.features.push(featureObject);
-          console.log(featureObject.properties.NAME);
+          matches.push(marker);
         }
+
+
       }
     });
     return matches;
@@ -106,7 +132,13 @@ app.directive('popup', ['$http', '$compile', function($http, $compile) {
         scope: {
             anuncio: "="
         },
-        templateUrl: 'popup.html'
+        templateUrl: 'popup.html',
+        link: function (scope, elem, attrs) {
+            console.log(elem);
+            elem.on('click', function () {
+                alert();
+            })
+        }
     };
 }]);
 

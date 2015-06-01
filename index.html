@@ -51,38 +51,48 @@
 				</ul>
 			</div>
 			<div class="row" id="containerBusca">
-				<div class="hidden-xs col-sm-4 col-md-6 col-lg-3" id="filtroTopo">
+				<div class="hidden-xs col-sm-7 col-md-7 col-lg-7" id="filtroTopo">
 					<!-- <span class="glyphicon glyphicon-filter"></span> -->
 					<span>Ative um ou mais filtros</span>
 					<span class="glyphicon glyphicon-menu-down" id="setaFiltro"></span>
 				</div>
-				<div class="col-sm-8 col-md-6 col-lg-9">
-					<input type="text" class="form-control" id="buscaTopo" placeholder="Filtre por modelo aqui" ng-model="search">
+				<div class="col-sm-5 col-md-5 col-lg-5">
+					<span id="iconeBusca" class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					<input type="text" class="form-control" id="buscaTopo" placeHolder="Onix, Fiesta, etc..." ng-model="search">
+					<span id="tituloBusca">Busca rápida</span>
 				</div>
 			</div>
 		</header>
 		<div id="containerMap">
 			<div id="containerFiltros">
-				<ul>
-					<li>preço (R$)
-						<span class="glyphicon glyphicon-menu-down seta"></span>
-					</li>
-					<li>marca
-						<span class="glyphicon glyphicon-menu-down seta"></span>
-					</li>
-					<li>modelo
-						<span class="glyphicon glyphicon-menu-down seta"></span>
-					</li>
-					<li>quilometragem (Km)
-						<span class="glyphicon glyphicon-menu-down seta"></span>
-					</li>
-				</ul>
-				<div class="FiltroContent">
-					
+				<div id="botoesFiltro" ng-init="currentTab = 1">
+					<span id="filtroPreco" ng-click="currentTab = 1" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 1}"></span>
+					<span id="filtroKm" ng-click="currentTab = 2" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 2}"></span>
+					<span id="filtroMarca" ng-click="currentTab = 3" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 3}"></span>
+					<span id="filtroModelo" ng-click="currentTab = 4" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 4}"></span>
+					<span id="filtroEstado" ng-click="currentTab = 5" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 5}"></span>
+					<span id="filtroFoto" ng-click="currentTab = 6" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 6}"></span>
+					<span id="filtroPorta" ng-click="currentTab = 7" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 7}"></span>
+				</div>
+				<div id="conteudoFiltro" >
+					<div class="filtroConteudo" ng-show="currentTab == 1">
+						<h1 class="tituloFiltro">PREÇO (R$)</h1>
+						<div class="inputContainer">
+							<input type="text" class="inputFiltro" placeHolder="valor mín." style="margin-right:10px"/>
+							<input type="text" class="inputFiltro" placeHolder="valor máx."/>
+							<button class="btnLimparFiltro">Limpar</button>
+							<button class="btnFiltro" >Filtrar</button>
+						</div>
+					</div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 2"></div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 3"></div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 4"></div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 5"></div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 6"></div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 7"></div>			
 				</div>
 			</div>
-			<leaflet center="poa" defaults="defaults" markers="markers">
-			</leaflet>
+			<leaflet center="poa" defaults="defaults" markers="anunciosMarkers"></leaflet>
 		</div>
 	</div>
 </body>

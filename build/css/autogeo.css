@@ -530,19 +530,69 @@ header{
 }
 
 #containerBusca{
-	background-color: #007DC6;
+	background-color: #0065ae;
 	float: left;
 	width: 100%;
-	border-bottom: 2px solid #007DC6;
+	border-bottom: 2px solid #0065ae;
 }
 #buscaTopo{
 	margin: 12px auto;	
-	width: 50%;
+	width: 30%;
 	float: right;
 	color: #333333;
 	border: 1px solid #fff;
-	border-radius: 3px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	-webkit-border-top-right-radius: 0px;
+	-webkit-border-bottom-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
 	box-shadow: none;
+	color: #0065ae;
+}
+#tituloBusca{
+	float: right;
+	height: 59px;
+	font-weight: bold;
+	line-height: 59px;
+	color: #FFF;
+	margin-right: 10px;
+}
+#iconeBusca{
+	color: #0065ae;
+	float: right;
+	background-color: #FFF;
+	height: 34px;
+	margin-top: 11px;
+	line-height: 34px;
+  	width: 20px;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+::-webkit-input-placeholder {
+   color: #0065ae;
+}
+
+:-moz-placeholder { 
+   color: #0065ae;  
+}
+
+::-moz-placeholder { 
+   color: #0065ae;  
+}
+
+:-ms-input-placeholder {  
+   color: #0065ae;  
 }
 #filtroTopo{
 	float: left;
@@ -550,6 +600,10 @@ header{
 	font-weight: bold;
 	line-height: 59px;
 	color: #FFF;
+}
+#filtroTopo span{
+	float: left;
+	margin-right: 5px;
 }
 #setaFiltro{
 	float: right;
@@ -584,7 +638,7 @@ header{
 	font-size: 14px;
 	font-weight: normal;
 	margin-left: 25px;
-	color: #007CC6;
+	color: #0065ae;
 	font-weight: bold;
 	padding-top: 3px;
 	text-decoration: none;
@@ -597,15 +651,15 @@ header{
 }
 #menu a.ativo{
 	text-decoration: none;
-	border-top: 3px solid #007CC6;
-	color: #007CC6;
+	border-top: 3px solid #0065ae;
+	color: #0065ae;
 	padding-top: 0;
 }
 
 #menu a:hover{
 	text-decoration: none;
-	border-top: 3px solid #007CC6;
-	color: #007CC6;
+	border-top: 3px solid #0065ae;
+	color: #0065ae;
 	padding-top: 0;
 }
 #menuMobile{
@@ -784,35 +838,125 @@ header{
 	float: left;
 }
 #containerFiltros{
-	background-color: #00528E;
+	/*background-color: #00528E;*/
 	width: 326px;
+	height: 330px;
+	float: left;
+	background: #FFF;
+	position: absolute;
+	z-index: 50000;
+	top: 140px;
+	box-shadow: 1px 1px 18px #6d6d6d;
+}
+#botoesFiltro{
+	width: 50px;
 	height: 100%;
 	float: left;
+	background-color: #0065ae;
+}
+.iconeFiltroAba{
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	float: left;
+	cursor: pointer;
+}
+#filtroModelo{
+	background: url('../img/icones/modelo_filtro.png') no-repeat center;
+}
+#filtroModelo.ativo{
+	background: url('../img/icones/modelo.png') no-repeat center #FFF;
+}
+#filtroMarca{
+	background: url('../img/icones/marca_filtro.png') no-repeat center;
+}
+#filtroMarca.ativo{
+	background: url('../img/icones/marca.png') no-repeat center #FFF;
+}
+#filtroKm{
+	background: url('../img/icones/km_filtro.png') no-repeat center;
+}
+#filtroKm.ativo{
+	background: url('../img/icones/km.png') no-repeat center #FFF;
+}
+#filtroEstado{
+	background: url('../img/icones/estado_filtro.png') no-repeat center;
+}
+#filtroEstado.ativo{
+	background: url('../img/icones/estado.png') no-repeat center #FFF;
+}
+#filtroPreco{
+	background: url('../img/icones/preco_filtro.png') no-repeat center;
+}
+#filtroPreco.ativo{
+	background: url('../img/icones/preco.png') no-repeat center #FFF;
+}
+#filtroPorta{
+	background: url('../img/icones/porta_filtro.png') no-repeat center;
+}
+#filtroPorta.ativo{
+	background: url('../img/icones/porta.png') no-repeat center #FFF;
+}
+#filtroFoto{
+	background: url('../img/icones/foto_filtro.png') no-repeat center;
+}
+#filtroFoto.ativo{
+	background: url('../img/icones/foto.png') no-repeat center #FFF;
+}
+#conteudoFiltro{
+	width: 270px;
+	height: 100%;
+	float: left;
+	background-color: #FFF;
 }
 
-#containerFiltros ul{
-	float: left;
-	width: 100%;
-	list-style: none;
-	margin: 0px;
+.filtroConteudo{
+	padding: 10px;
 }
-#containerFiltros ul li{
-	cursor: pointer;
-	display: block;
-	line-height: 60px;
-	height: 60px;
+.tituloFiltro{
+	width: 100%;
 	float: left;
-	font-size: 12px;
+	height: 55px;
+	line-height: 55px;
 	text-transform: uppercase;
-	color:#FFF;
-	width: 100%;
-	padding-left: 15px;
-	border-bottom: 1px solid #004679;
-	box-shadow: 1px 1px 1px #0B5D98;
-}
-#containerFiltros ul li .seta{
-	float: right;
-	margin-right: 15px;
-	line-height: 60px;
+	color: #0065ae;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 0px;
+	margin: 0;
 	text-align: center;
+}
+.inputFiltro{
+	width: 120px;
+	padding-left: 5px;
+	float: left;
+	height: 35px;
+	border-radius: 2px;
+	background: #d9d9d9;
+	box-shadow: none;
+	border:none;
+}
+.btnFiltro{
+	float: left;
+	margin-top: 30px;
+	background-color: #5acebd;
+	border:none;
+	color: #FFF;
+	font-size: 13px;
+	width: 50%;
+	height: 40px;
+	line-height: 40px;
+}
+.btnLimparFiltro{
+	float: left;
+	margin-top: 30px;
+	background-color: #e05050;
+	width: 50%;
+	height: 40px;
+	line-height: 40px;
+	border:none;
+	color: #FFF;
+	font-size: 13px;
 }
