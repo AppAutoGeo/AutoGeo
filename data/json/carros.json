@@ -9,7 +9,7 @@
         "marca": "Wolkswagen",
         "km": "25000.00",
         "cor": "prata",
-        "valor": 25000.00
+        "valor": 28500.00
       },
       "geometry": {
         "type": "Point",
@@ -27,7 +27,7 @@
         "marca": "Chevrolet",
         "km": "75.000",
         "cor": "branco",
-        "valor": 25000.00
+        "valor": 66500.00
       },
       "geometry": {
         "type": "Point",
@@ -45,7 +45,7 @@
         "marca": "Chevrolet",
         "km": "35.000",
         "cor": "vermelho",
-        "valor": 25000.00
+        "valor": 18000.00
       },
       "geometry": {
         "type": "Point",
@@ -63,7 +63,7 @@
         "marca": "Wolkswagen",
         "km": "62.000",
         "cor": "azul",
-        "valor": 25000.00
+        "valor": 21000.00
       },
       "geometry": {
         "type": "Point",
@@ -81,7 +81,7 @@
         "marca": "Honda",
         "km": "88.000",
         "cor": "preto",
-        "valor": 25000.00
+        "valor": 27600.00
       },
       "geometry": {
         "type": "Point",
@@ -117,7 +117,7 @@
         "marca": "Hyundai",
         "km": "32.000",
         "cor": "vermelho",
-        "valor": 25000.00
+        "valor": 38000.00
       },
       "geometry": {
         "type": "Point",
@@ -135,7 +135,7 @@
         "marca": "Chevrolet",
         "km": "0.000",
         "cor": "cinza",
-        "valor": 25000.00
+        "valor": 33900.00
       },
       "geometry": {
         "type": "Point",
@@ -153,7 +153,7 @@
         "marca": "Ford",
         "km": "15.000",
         "cor": "azul",
-        "valor": 25000.00
+        "valor": 27000.00
       },
       "geometry": {
         "type": "Point",
@@ -171,7 +171,7 @@
         "marca": "Chevrolet",
         "km": "32.000",
         "cor": "roxo",
-        "valor": 25000.00
+        "valor": 34000.00
       },
       "geometry": {
         "type": "Point",
@@ -189,7 +189,7 @@
         "marca": "Ford",
         "km": "65.000",
         "cor": "preto",
-        "valor": 25000.00
+        "valor": 39600.00
       },
       "geometry": {
         "type": "Point",
@@ -207,7 +207,7 @@
         "marca": "Toyota",
         "km": "45.000",
         "cor": "prata",
-        "valor": 25000.00
+        "valor": 54300.00
       },
       "geometry": {
         "type": "Point",
@@ -225,7 +225,7 @@
         "marca": "Toyota",
         "km": "25000.00",
         "cor": "branco",
-        "valor": 25000.00
+        "valor": 62300.00
       },
       "geometry": {
         "type": "Point",
@@ -243,7 +243,7 @@
         "marca": "Hyundai",
         "km": "36.000",
         "cor": "prata",
-        "valor": 25000.00
+        "valor": 98000.00
       },
       "geometry": {
         "type": "Point",

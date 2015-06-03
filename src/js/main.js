@@ -12,7 +12,6 @@ app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'Servic
     $scope.search = '';
     $scope.anunciosMarkers = [];
     $scope.anunciosMarkers2 = [];
-    $scope.searchObj = {modelo: "", cor: ""};
     
     var promiseAnuncios = ServicoAnuncios.getAnuncios();
     promiseAnuncios.then(function(data) {
@@ -40,11 +39,11 @@ app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'Servic
         }
     });
 
+    //Filtro por modelo
     $scope.$watch('search', function (newVal, oldVal) {
         if (newVal !== oldVal && newVal !== '') {
-            $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, 'modelo', newVal);
+            $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, 'modelo', newVal, 'modelo');
         } else {
-            console.log('else');
             if($scope.anunciosMarkers.length < $scope.anunciosMarkers2.length){
                 var promiseAnuncios = ServicoAnuncios.getAnuncios();
                 promiseAnuncios.then(function(data) {
@@ -63,9 +62,16 @@ app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'Servic
         }
     });
 
-    $scope.filtrarAnuncio = function(campo, text){
-        $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, campo, text);
+    $scope.filtrarAnuncio = function(type){
+        switch(type){
+            case "preco":
+                $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, 'valor', $scope.filtro.minVal, "precoMin");
+                break;
+            default:
+                alert("Filtro Invalido");
+        }
     };
+
     $scope.limparFiltros = function(){
         console.log($scope.anunciosMarkers.length);
         console.log($scope.anunciosMarkers2.length);
@@ -109,14 +115,31 @@ app.directive('toggleMenuIcon', function (){
 });
 
 app.filter('filter', [function() {
-  return function(markers, searchProperty, searchValue) {
+  return function(markers, searchProperty, searchValue, type) {
     var matches = [];
     angular.forEach(markers, function(marker, featureKey) {
       if (marker.props.hasOwnProperty(searchProperty)) {
-        var property = marker.props[searchProperty].toLowerCase();
-        var search = searchValue.toLowerCase();
-        if (property.indexOf(search) > -1) {
-          matches.push(marker);
+        
+         switch(type){
+            case "precoMin":
+                if (marker.props[searchProperty] >= searchValue) {
+                  matches.push(marker);
+                }
+                break;
+            case "precoMax":
+                if (marker.props[searchProperty] <= searchValue) {
+                  matches.push(marker);
+                }
+                break;
+            case "modelo":
+                var property = marker.props[searchProperty].toLowerCase();
+                var search = searchValue.toLowerCase();
+                if (property.indexOf(search) > -1) {
+                  matches.push(marker);
+                }
+                break;
+            default:
+                console.log("Filtro Invalido");
         }
 
 

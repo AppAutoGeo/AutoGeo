@@ -78,10 +78,10 @@
 					<div class="filtroConteudo" ng-show="currentTab == 1">
 						<h1 class="tituloFiltro">PREÇO (R$)</h1>
 						<div class="inputContainer">
-							<input type="text" class="inputFiltro" placeHolder="valor mín." style="margin-right:10px"/>
-							<input type="text" class="inputFiltro" placeHolder="valor máx."/>
+							<input type="text" class="inputFiltro" placeHolder="valor mín." ng-model="filtro.minVal" style="margin-right:10px"/>
+							<input type="text" class="inputFiltro" placeHolder="valor máx." ng-model="filtro.maxVal"/>
 							<button class="btnLimparFiltro">Limpar</button>
-							<button class="btnFiltro" >Filtrar</button>
+							<button class="btnFiltro" ng-click="filtrarAnuncio('preco')">Filtrar</button>
 						</div>
 					</div>			
 					<div  class="filtroConteudo" ng-show="currentTab == 2"></div>			
