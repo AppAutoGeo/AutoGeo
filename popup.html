@@ -55,10 +55,10 @@
 	<strong>ANO: </strong>{{anuncio.properties.ano}}
 </p>
 <p class="descricaoDetalhes">
-	<strong>KM: </strong>{{anuncio.properties.km}}
+	<strong>KM: </strong>{{anuncio.properties.km | number:0}}
 </p>
 <p class="descricaoDetalhes">
-	<strong>COR: </strong>{{anuncio.properties.cor}}
+	<strong>COR: </strong>{{anuncio.properties.cor}} 
 </p>
 <p class="descricaoDetalhes">
 	<strong>VALOR: </strong>{{anuncio.properties.valor | currency: 'R$'}}

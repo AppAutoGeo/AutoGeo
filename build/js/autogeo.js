@@ -1,4 +1,4 @@
-var app = angular.module('AutoGeoAPP', ["leaflet-directive", "ngResource"]);
+var app = angular.module('AutoGeoAPP', ["leaflet-directive", "ngResource", "ui.utils.masks"]);
 
 app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'ServicoAnuncios', '$resource', function($scope, $http, $filter, $rootScope, ServicoAnuncios, $resource) {
     
@@ -9,7 +9,15 @@ app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'Servic
     }; 
 
     $scope.enableMenu = false;
-    $scope.search = '';
+    $scope.marcas   = [{nome: "Selecione uma marca"},{nome: "Chevrolet"},{nome: "Ford"},{nome: "Fiat"},{nome: "Wolkswagen"},{nome: "Renault"},{nome: "Pegeout"},{nome: "Toyota"}]
+    $scope.filtro = {
+        minVal  :   "",
+        maxVal  :   "",
+        minKm  :   "",
+        maxKm  :   "", 
+        marca  :   "",
+        modelo  :   ""
+    };
     $scope.anunciosMarkers = [];
     $scope.anunciosMarkers2 = [];
     
@@ -39,55 +47,34 @@ app.controller('MainCtrl', [ '$scope', '$http', '$filter', '$rootScope', 'Servic
         }
     });
 
-    //Filtro por modelo
-    $scope.$watch('search', function (newVal, oldVal) {
-        if (newVal !== oldVal && newVal !== '') {
-            $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, 'modelo', newVal, 'modelo');
-        } else {
-            if($scope.anunciosMarkers.length < $scope.anunciosMarkers2.length){
-                var promiseAnuncios = ServicoAnuncios.getAnuncios();
-                promiseAnuncios.then(function(data) {
-                    $rootScope.anuncios = data.anuncios;
-                    angular.forEach(data.anuncios, function(anuncio, i) {
-                        $scope.anunciosMarkers.push({
-                            lat: anuncio.geometry.coordinates[1], 
-                            lng: anuncio.geometry.coordinates[0], 
-                            message: "<popup anuncio='anuncios[" + i + "]'></popup>",
-                            popupOptions: {minWidth: 300, maxWidth: 300},
-                            props: anuncio.properties
-                        });
-                    });
-                });
-            }
-        }
+    //Filtro por modelo - busca rapida
+    $scope.$watch('filtro.modelo', function (newVal, oldVal) {
+        $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2,  $scope.filtro);
     });
 
-    $scope.filtrarAnuncio = function(type){
-        switch(type){
-            case "preco":
-                $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, 'valor', $scope.filtro.minVal, "precoMin");
-                break;
-            default:
-                alert("Filtro Invalido");
-        }
+    //Filtro geral
+    $scope.filtrarAnuncio = function(){
+        $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, $scope.filtro);
     };
 
-    $scope.limparFiltros = function(){
-        console.log($scope.anunciosMarkers.length);
-        console.log($scope.anunciosMarkers2.length);
-        var promiseAnuncios = ServicoAnuncios.getAnuncios();
-        promiseAnuncios.then(function(data) {
-            $rootScope.anuncios = data.anuncios;
-            angular.forEach(data.anuncios, function(anuncio, i) {
-                $scope.anunciosMarkers.push({
-                    lat: anuncio.geometry.coordinates[1], 
-                    lng: anuncio.geometry.coordinates[0], 
-                    message: "<popup anuncio='anuncios[" + i + "]'></popup>",
-                    popupOptions: {minWidth: 300, maxWidth: 300},
-                    props: anuncio.properties
-                });
-            });
-        });
+    $scope.limparFiltro = function(type){
+        switch(type){
+            case "preco":
+                $scope.filtro.minVal = "";
+                $scope.filtro.maxVal = "";
+                break; 
+            case "km":
+                $scope.filtro.minKm = "";
+                $scope.filtro.maxKm = "";
+                break;
+            case "marca":
+                $scope.filtro.marca = $scope.marcas[0];
+                break;
+            default:
+                $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, $scope.filtro); 
+        }
+        $scope.anunciosMarkers = $filter('filter')($scope.anunciosMarkers2, $scope.filtro); 
+        
     };
     
 
@@ -115,35 +102,33 @@ app.directive('toggleMenuIcon', function (){
 });
 
 app.filter('filter', [function() {
-  return function(markers, searchProperty, searchValue, type) {
+  return function(markers, obj) {
     var matches = [];
     angular.forEach(markers, function(marker, featureKey) {
-      if (marker.props.hasOwnProperty(searchProperty)) {
-        
-         switch(type){
-            case "precoMin":
-                if (marker.props[searchProperty] >= searchValue) {
-                  matches.push(marker);
-                }
-                break;
-            case "precoMax":
-                if (marker.props[searchProperty] <= searchValue) {
-                  matches.push(marker);
-                }
-                break;
-            case "modelo":
-                var property = marker.props[searchProperty].toLowerCase();
-                var search = searchValue.toLowerCase();
-                if (property.indexOf(search) > -1) {
-                  matches.push(marker);
-                }
-                break;
-            default:
-                console.log("Filtro Invalido");
-        }
+            marker.match = true;
+            if(obj.minVal != "" && marker.match == true){
+                (marker.props["valor"] >= obj.minVal) ? marker.match=true : marker.match=false;
+            }
+            if(obj.maxVal != "" && marker.match == true){
+                (marker.props["valor"] <= obj.maxVal) ? marker.match=true : marker.match=false;
+            }
+            if(obj.minKm != "" && marker.match == true){
+                (marker.props["km"] >= obj.minKm) ? marker.match=true : marker.match=false;
+            }
+            if(obj.maxKm != "" && marker.match == true){
+                (marker.props["km"] <= obj.maxKm) ? marker.match=true : marker.match=false;
+            }
+            if(obj.modelo != "" && marker.match == true){
+                (marker.props["modelo"].toUpperCase().indexOf(obj.modelo.toUpperCase()) > -1) ? marker.match=true : marker.match=false;
+            }
+            if(obj.marca.nome != 'Selecione uma marca' && marker.match == true){
+                (marker.props["marca"].toUpperCase().indexOf(obj.marca.nome.toUpperCase()) > -1) ? marker.match=true : marker.match=false;
+            }
 
-
-      }
+            //todos os filtros true
+            if(marker.match==true){
+                matches.push(marker);
+            }
     });
     return matches;
   };

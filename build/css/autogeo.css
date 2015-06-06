@@ -840,7 +840,7 @@ header{
 #containerFiltros{
 	/*background-color: #00528E;*/
 	width: 326px;
-	height: 330px;
+	height: 300px; 
 	float: left;
 	background: #FFF;
 	position: absolute;
@@ -894,10 +894,10 @@ header{
 	background: url('../img/icones/preco.png') no-repeat center #FFF;
 }
 #filtroPorta{
-	background: url('../img/icones/porta_filtro.png') no-repeat center;
+	background: url('../img/icones/portas_filtro.png') no-repeat center;
 }
 #filtroPorta.ativo{
-	background: url('../img/icones/porta.png') no-repeat center #FFF;
+	background: url('../img/icones/portas.png') no-repeat center #FFF;
 }
 #filtroFoto{
 	background: url('../img/icones/foto_filtro.png') no-repeat center;
@@ -959,4 +959,23 @@ header{
 	border:none;
 	color: #FFF;
 	font-size: 13px;
+}
+.selectFiltro{
+	width: 100%;
+	padding-left: 5px;
+	float: left;
+	height: 35px;
+	border-radius: 2px;
+	background: #d9d9d9;
+	box-shadow: none;
+	border:none;
+	color: #0065ae;
+}
+.selectFiltro option{
+	width: 100%;
+	padding-left: 5px;
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	border:none;
 }

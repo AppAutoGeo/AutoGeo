@@ -7,9 +7,9 @@
         "ano": 2010,
         "modelo": "Gol",
         "marca": "Wolkswagen",
-        "km": "25000.00",
+        "km": 25000,
         "cor": "prata",
-        "valor": 28500.00
+        "valor": 56000
       },
       "geometry": {
         "type": "Point",
@@ -25,7 +25,7 @@
         "ano": 2011,
         "modelo": "Cruze",
         "marca": "Chevrolet",
-        "km": "75.000",
+        "km": 75000,
         "cor": "branco",
         "valor": 66500.00
       },
@@ -43,7 +43,7 @@
         "ano": 2002,
         "modelo": "Corsa",
         "marca": "Chevrolet",
-        "km": "35.000",
+        "km": 35000,
         "cor": "vermelho",
         "valor": 18000.00
       },
@@ -61,7 +61,7 @@
         "ano": 2010,
         "modelo": "Gol",
         "marca": "Wolkswagen",
-        "km": "62.000",
+        "km": 62000,
         "cor": "azul",
         "valor": 21000.00
       },
@@ -79,7 +79,7 @@
         "ano": 2003,
         "modelo": "Civic",
         "marca": "Honda",
-        "km": "88.000",
+        "km": 88000,
         "cor": "preto",
         "valor": 27600.00
       },
@@ -97,7 +97,7 @@
         "ano": 2008,
         "modelo": "Civic",
         "marca": "Honda",
-        "km": "35.000",
+        "km": 35000,
         "cor": "branco",
         "valor": 25000.00
       },
@@ -115,7 +115,7 @@
         "ano": 2010,
         "modelo": "i30",
         "marca": "Hyundai",
-        "km": "32.000",
+        "km": 32000,
         "cor": "vermelho",
         "valor": 38000.00
       },
@@ -133,7 +133,7 @@
         "ano": 2015,
         "modelo": "Onix",
         "marca": "Chevrolet",
-        "km": "0.000",
+        "km": 0,
         "cor": "cinza",
         "valor": 33900.00
       },
@@ -151,7 +151,7 @@
         "ano": 2014,
         "modelo": "Fiesta",
         "marca": "Ford",
-        "km": "15.000",
+        "km": 15000,
         "cor": "azul",
         "valor": 27000.00
       },
@@ -169,7 +169,7 @@
         "ano": 2010,
         "modelo": "Cobalt",
         "marca": "Chevrolet",
-        "km": "32.000",
+        "km": 32000,
         "cor": "roxo",
         "valor": 34000.00
       },
@@ -187,7 +187,7 @@
         "ano": 2008,
         "modelo": "Fusion",
         "marca": "Ford",
-        "km": "65.000",
+        "km": 65000,
         "cor": "preto",
         "valor": 39600.00
       },
@@ -205,7 +205,7 @@
         "ano": 2011,
         "modelo": "Corolla",
         "marca": "Toyota",
-        "km": "45.000",
+        "km": 45000,
         "cor": "prata",
         "valor": 54300.00
       },
@@ -223,7 +223,7 @@
         "ano": 2012,
         "modelo": "Corolla",
         "marca": "Toyota",
-        "km": "25000.00",
+        "km": 25000,
         "cor": "branco",
         "valor": 62300.00
       },
@@ -241,7 +241,7 @@
         "ano": 2015,
         "modelo": "ix35",
         "marca": "Hyundai",
-        "km": "36.000",
+        "km": 36000,
         "cor": "prata",
         "valor": 98000.00
       },
@@ -259,7 +259,7 @@
         "ano": 2000,
         "modelo": "Golf",
         "marca": "Wolkswagen",
-        "km": "80.000",
+        "km": 80000,
         "cor": "verde",
         "valor": 25000.00
       },
@@ -277,7 +277,7 @@
         "ano": 2002,
         "modelo": "Focus",
         "marca": "Ford",
-        "km": "54.000",
+        "km": 54000,
         "cor": "preto",
         "valor": 25000.00
       },
@@ -295,7 +295,7 @@
         "ano": 1998,
         "modelo": "Golf",
         "marca": "Wolkswagen",
-        "km": "80.000",
+        "km": 80000,
         "cor": "azul",
         "valor": 25000.00
       },
@@ -313,7 +313,7 @@
         "ano": 2015,
         "modelo": "Celta",
         "marca": "Chevrolet",
-        "km": "8.000",
+        "km": 8000,
         "cor": "vermelho",
         "valor": 25000.00
       },

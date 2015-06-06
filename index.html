@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
@@ -13,7 +13,8 @@
 
 	<script src="build/js/autogeo-deps.js"></script>
 	<script src="build/js/autogeo.js"></script>
-
+	<script src="bower_components/angular-i18n/angular-locale_pt-br.js"></script>
+ 
 	<title>AutoGeo - Sistema de Anúncio de Automóveis</title>
 </head>
 <body ng-app="AutoGeoAPP">
@@ -58,7 +59,7 @@
 				</div>
 				<div class="col-sm-5 col-md-5 col-lg-5">
 					<span id="iconeBusca" class="glyphicon glyphicon-search" aria-hidden="true"></span>
-					<input type="text" class="form-control" id="buscaTopo" placeHolder="Onix, Fiesta, etc..." ng-model="search">
+					<input type="text" class="form-control" id="buscaTopo" placeHolder="Onix, Fiesta, etc..." ng-model="filtro.modelo">
 					<span id="tituloBusca">Busca rápida</span>
 				</div>
 			</div>
@@ -69,27 +70,81 @@
 					<span id="filtroPreco" ng-click="currentTab = 1" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 1}"></span>
 					<span id="filtroKm" ng-click="currentTab = 2" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 2}"></span>
 					<span id="filtroMarca" ng-click="currentTab = 3" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 3}"></span>
-					<span id="filtroModelo" ng-click="currentTab = 4" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 4}"></span>
+					<span id="filtroPorta" ng-click="currentTab = 4" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 4}"></span>
 					<span id="filtroEstado" ng-click="currentTab = 5" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 5}"></span>
 					<span id="filtroFoto" ng-click="currentTab = 6" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 6}"></span>
-					<span id="filtroPorta" ng-click="currentTab = 7" class="iconeFiltroAba" ng-class="{'ativo': currentTab == 7}"></span>
 				</div>
 				<div id="conteudoFiltro" >
 					<div class="filtroConteudo" ng-show="currentTab == 1">
 						<h1 class="tituloFiltro">PREÇO (R$)</h1>
 						<div class="inputContainer">
-							<input type="text" class="inputFiltro" placeHolder="valor mín." ng-model="filtro.minVal" style="margin-right:10px"/>
-							<input type="text" class="inputFiltro" placeHolder="valor máx." ng-model="filtro.maxVal"/>
-							<button class="btnLimparFiltro">Limpar</button>
-							<button class="btnFiltro" ng-click="filtrarAnuncio('preco')">Filtrar</button>
+							<input type="text" class="inputFiltro" placeHolder="Valor mín." ui-money-mask ng-model="filtro.minVal" style="margin-right:10px"/>
+							<input type="text" class="inputFiltro" placeHolder="Valor máx." ui-money-mask ng-model="filtro.maxVal"/>
+							<button class="btnLimparFiltro" ng-click="limparFiltro('preco')">Limpar</button>
+							<button class="btnFiltro" ng-click="filtrarAnuncio()">Filtrar</button>
 						</div>
 					</div>			
-					<div  class="filtroConteudo" ng-show="currentTab == 2"></div>			
-					<div  class="filtroConteudo" ng-show="currentTab == 3"></div>			
-					<div  class="filtroConteudo" ng-show="currentTab == 4"></div>			
-					<div  class="filtroConteudo" ng-show="currentTab == 5"></div>			
-					<div  class="filtroConteudo" ng-show="currentTab == 6"></div>			
-					<div  class="filtroConteudo" ng-show="currentTab == 7"></div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 2">
+						<h1 class="tituloFiltro">QUILOMETRAGEM (Km)</h1>
+						<div class="inputContainer">
+							<input type="text" class="inputFiltro" placeHolder="Km mín." ui-money-mask ng-model="filtro.minKm" style="margin-right:10px"/>
+							<input type="text" class="inputFiltro" placeHolder="Km máx." ui-money-mask ng-model="filtro.maxKm"/>
+							<button class="btnLimparFiltro" ng-click="limparFiltro('km')">Limpar</button>
+							<button class="btnFiltro" ng-click="filtrarAnuncio()">Filtrar</button>
+						</div>
+					</div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 3">
+						<h1 class="tituloFiltro">MARCA DE AUTOMÓVEL</h1>
+						<div class="inputContainer">
+							<select class="selectFiltro" ng-init="filtro.marca = marcas[0]" ng-model="filtro.marca" ng-options="marca.nome for marca in marcas"></select>
+							<button class="btnLimparFiltro" ng-click="limparFiltro('marca')">Limpar</button>
+							<button class="btnFiltro" ng-click="filtrarAnuncio()">Filtrar</button>
+						</div>
+					</div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 4">
+						<h1 class="tituloFiltro">QUANTIDADE DE PORTAS</h1>
+						<div class="inputContainer">
+							<div class="btn-toolbar" role="toolbar" aria-label="Toolbar" style="margin: 0 auto; width:165px;">
+						      	<div class="btn-group">
+							        <label class="btn btn-default" ng-model="radioModel" btn-radio="2">2</label>
+							        <label class="btn btn-default" ng-model="radioModel" btn-radio="4">4</label>
+							        <label class="btn btn-default" ng-model="radioModel" btn-radio="0">Tanto Faz</label>
+							    </div>
+						    </div>
+							<button class="btnLimparFiltro" ng-click="limparFiltro('portas')">Limpar</button>
+							<button class="btnFiltro" ng-click="filtrarAnuncio()">Filtrar</button>
+						</div>
+					</div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 5">
+						<h1 class="tituloFiltro">ESTADO DO AUTOMÓVEL</h1>
+						<div class="inputContainer">
+							<div class="btn-toolbar" role="toolbar" aria-label="Toolbar" style="margin: 0 auto; width:185px;">
+						      	<div class="btn-group">
+							        <label class="btn btn-default" ng-model="radioModel" btn-radio="0">Zero Km</label>
+							        <label class="btn btn-default" ng-model="radioModel" btn-radio="1">Semi Novo</label>
+							    </div>
+						    </div>
+							<button class="btnLimparFiltro" ng-click="limparFiltro('portas')">Limpar</button>
+							<button class="btnFiltro" ng-click="filtrarAnuncio()">Filtrar</button>
+						</div>
+					</div>			
+					<div  class="filtroConteudo" ng-show="currentTab == 6">
+						<h1 class="tituloFiltro">FOTOS DO AUTOMÓVEL</h1>
+						<div class="inputContainer">
+							<div class="btn-toolbar" role="toolbar" aria-label="Toolbar" style="margin: 0 auto; width:100px;">
+						      	<div class="btn-group">
+							        <label class="btn btn-default" ng-model="radioModel" btn-radio="0">
+							        	<span class="glyphicon glyphicon-camera" style="font-size:20px;color:#0065AE"></span>
+							        </label>
+							        <label class="btn btn-default" ng-model="radioModel" btn-radio="1">
+							        	<span class="glyphicon glyphicon-camera" style="font-size:20px;color:#0065AE"></span>
+							        </label>
+							    </div>
+						    </div>
+							<button class="btnLimparFiltro" ng-click="limparFiltro('portas')">Limpar</button>
+							<button class="btnFiltro" ng-click="filtrarAnuncio()">Filtrar</button>
+						</div>
+					</div>			
 				</div>
 			</div>
 			<leaflet center="poa" defaults="defaults" markers="anunciosMarkers"></leaflet>
