@@ -775,17 +775,17 @@ header{
 	font-size: 25px;
 	font-weight: 400;
 	line-height: 25px;
-	color: #3E6B9A;
+	color: #3e3e3e;
 	width: auto;
-	border-right: 1px solid #B1BAC2;
 }
 .tituloModelo{
+	border-right: 1px solid #B1BAC2;
 	float: left;
 	padding:10px;
 	font-size: 25px;
 	font-weight: 400;
 	line-height: 25px;
-	color: #3E6B9A;
+	color: #3e3e3e;
 	width: auto;
 }
 .tituloMarca{
@@ -813,9 +813,10 @@ header{
 	float: left;
 	width: 100%;
 	list-style: none;
-	margin: 10px 0 5px 0;
+	margin: 10px 0 10px 0;
 }
 .ulDetalhes li{
+	cursor: pointer;
 	display: inline;
 	line-height: 35px;
 	height: 35px;
@@ -825,10 +826,14 @@ header{
 	padding-right: 5px;
 	padding-left: 10px;
 	padding-top: 3px;
+	border-bottom: 1px solid #c9c9c9;
 }
 .ulDetalhes li.ativo{
 	border-top: 3px solid #007DC6;
+	border-right: 1px solid #c9c9c9;
+	border-left: 1px solid #c9c9c9;
 	padding-top: 0;
+	border-bottom: none;
 }
 .leaflet-popup-content p.descricaoDetalhes{
 	float: left;
@@ -839,8 +844,9 @@ header{
 }
 #containerFiltros{
 	/*background-color: #00528E;*/
+	display: none;
 	width: 326px;
-	height: 300px; 
+	height: 350px; 
 	float: left;
 	background: #FFF;
 	position: absolute;
@@ -854,6 +860,30 @@ header{
 	float: left;
 	background-color: #0065ae;
 }
+.btnClearFilter{
+	width: 35px;
+	height: 40px;
+	float: left;
+	margin: 10px;
+}
+.closeFilter{
+	background: url('../img/icones/fechar.png') no-repeat right;
+	width: 35px;
+	height: 15px;
+	line-height: 15px;
+	display: block;
+	float: left;
+	cursor: pointer;
+}
+.iconeFiltroTopo{
+	background-color: transparent;
+	width: 35px;
+	height: 25px;
+	line-height: 50px;
+	display: block;
+	float: left;
+	cursor: pointer;
+}
 .iconeFiltroAba{
 	background-color: transparent;
 	width: 50px;
@@ -863,48 +893,55 @@ header{
 	float: left;
 	cursor: pointer;
 }
-#filtroModelo{
+.filtroModelo{
 	background: url('../img/icones/modelo_filtro.png') no-repeat center;
 }
-#filtroModelo.ativo{
+.filtroModelo.ativo{
 	background: url('../img/icones/modelo.png') no-repeat center #FFF;
 }
-#filtroMarca{
+.filtroMarca{
 	background: url('../img/icones/marca_filtro.png') no-repeat center;
 }
-#filtroMarca.ativo{
+.filtroMarca.ativo{
 	background: url('../img/icones/marca.png') no-repeat center #FFF;
 }
-#filtroKm{
+.filtroKm{
 	background: url('../img/icones/km_filtro.png') no-repeat center;
 }
-#filtroKm.ativo{
+.filtroKm.ativo{
 	background: url('../img/icones/km.png') no-repeat center #FFF;
 }
-#filtroEstado{
+.filtroEstado{
 	background: url('../img/icones/estado_filtro.png') no-repeat center;
 }
-#filtroEstado.ativo{
+.filtroEstado.ativo{
 	background: url('../img/icones/estado.png') no-repeat center #FFF;
 }
-#filtroPreco{
+.filtroPreco{
 	background: url('../img/icones/preco_filtro.png') no-repeat center;
 }
-#filtroPreco.ativo{
+.filtroPreco.ativo{
 	background: url('../img/icones/preco.png') no-repeat center #FFF;
 }
-#filtroPorta{
+.filtroPorta{
 	background: url('../img/icones/portas_filtro.png') no-repeat center;
 }
-#filtroPorta.ativo{
+.filtroPorta.ativo{
 	background: url('../img/icones/portas.png') no-repeat center #FFF;
 }
-#filtroFoto{
+.filtroFoto{
 	background: url('../img/icones/foto_filtro.png') no-repeat center;
 }
-#filtroFoto.ativo{
+.filtroFoto.ativo{
 	background: url('../img/icones/foto.png') no-repeat center #FFF;
 }
+.filtroCalendar{
+	background: url('../img/icones/calendar.png') no-repeat center;
+}
+.filtroCalendar.ativo{
+	background: url('../img/icones/calendar_filtro.png') no-repeat center #FFF;
+}
+
 #conteudoFiltro{
 	width: 270px;
 	height: 100%;
@@ -978,4 +1015,9 @@ header{
 	height: 25px;
 	line-height: 25px;
 	border:none;
+}
+.conteudoAba{
+	float: left;
+	width: 100%;
+	height: 170px;
 }

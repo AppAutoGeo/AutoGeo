@@ -1,66 +1,62 @@
-<span class="tituloValor">{{anuncio.properties.valor | currency: 'R$'}}</span>
 <span class="tituloModelo">{{anuncio.properties.modelo}}</span>
+<span class="tituloValor">{{anuncio.properties.valor | currency: 'R$'}}</span>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:300px;float:left;clear:both;margin-top:20px;">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-  </ol>
+<img ng-show="anuncio.properties.fotos" src="build/img/car.jpg" alt="carro" width="300" height="150"/>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="build/img/car.jpg" alt="carro" width="320" height="150">
-    </div>
+<ul class="ulDetalhes" ng-init="aba = 1">
+	<li ng-class="{'ativo': aba == 1}" ng-click="aba = 1">
+		<span class="glyphicon glyphicon-list-alt"></span>
+		Descrição
+	</li>
+	<li ng-class="{'ativo': aba == 2}" ng-click="aba = 2">
+		<span class="glyphicon glyphicon-th-list"></span>
+		Acessórios
+	</li>
+	<li ng-class="{'ativo': aba == 3}" ng-click="aba = 3">
+		<span class="glyphicon glyphicon-envelope"></span>
+		Contato
+	</li>
+</ul>
 
-    <div class="item">
-      <img src="build/img/car.jpg" alt="carro" width="320" height="150">
-    </div>
-
-    <div class="item">
-      <img src="build/img/car.jpg" alt="carro" width="320" height="150">
-    </div>
-
-    <div class="item">
-      <img src="build/img/car.jpg" alt="carro" width="320" height="150">
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Anterior</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Próximo</span>
-  </a>
+<div ng-show="aba == 1" class="conteudoAba">
+	<p class="descricaoDetalhes">
+		<strong>MARCA: </strong>{{anuncio.properties.marca}}
+	</p>
+	<p class="descricaoDetalhes">
+		<strong>MODELO: </strong>{{anuncio.properties.modelo}}
+	</p>
+	<p class="descricaoDetalhes">
+		<strong>ANO: </strong>{{anuncio.properties.ano}}
+	</p>
+	<p class="descricaoDetalhes">
+		<strong>KM: </strong>{{anuncio.properties.km | number:0}}
+	</p>
+	<p class="descricaoDetalhes">
+	  <strong>PORTAS: </strong>{{anuncio.properties.portas}}
+	</p>
+	<p class="descricaoDetalhes">
+	  <strong>COR: </strong>{{anuncio.properties.cor}} 
+	</p>
+	<p class="descricaoDetalhes">
+		<strong>ESTADO: </strong>{{anuncio.properties.estado == 1 ? "Zero Km" : "Semi Novo"}}
+	</p>
+	<p class="descricaoDetalhes">
+		<strong>VALOR: </strong>{{anuncio.properties.valor | currency: 'R$'}}
+	</p>
 </div>
 
-<ul class="ulDetalhes">
-	<li class="ativo">Descrição</li>
-	<li>Acessórios</li>
-	<li>Contato</li>
-</ul>
-<p class="descricaoDetalhes">
-	<strong>MARCA: </strong>{{anuncio.properties.marca}}
-</p>
-<p class="descricaoDetalhes">
-	<strong>MODELO: </strong>{{anuncio.properties.modelo}}
-</p>
-<p class="descricaoDetalhes">
-	<strong>ANO: </strong>{{anuncio.properties.ano}}
-</p>
-<p class="descricaoDetalhes">
-	<strong>KM: </strong>{{anuncio.properties.km | number:0}}
-</p>
-<p class="descricaoDetalhes">
-	<strong>COR: </strong>{{anuncio.properties.cor}} 
-</p>
-<p class="descricaoDetalhes">
-	<strong>VALOR: </strong>{{anuncio.properties.valor | currency: 'R$'}}
-</p>
+<div ng-show="aba == 2" class="conteudoAba">
+	<span class="badge" style="background:#0065AE; margin: 5px;padding:4px 10px 5px 10px;" ng-repeat="a in anuncio.properties.acessorios">{{a.nome}}</span>
+</div>
 
+<div ng-show="aba == 3" class="conteudoAba">
+	<p class="descricaoDetalhes">
+		<strong>NOME: </strong>{{anuncio.properties.contato.nomeCompleto}}
+	</p>
+	<p class="descricaoDetalhes">
+		<strong>EMAIL: </strong>{{anuncio.properties.contato.email}}
+	</p>
+	<p class="descricaoDetalhes">
+		<strong>TELEFONE: </strong>{{anuncio.properties.contato.telefone}}
+	</p>
+</div>

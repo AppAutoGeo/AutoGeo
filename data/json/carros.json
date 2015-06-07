@@ -9,7 +9,28 @@
         "marca": "Wolkswagen",
         "km": 25000,
         "cor": "prata",
-        "valor": 56000
+        "valor": 56000,
+        "portas": 2,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -27,7 +48,26 @@
         "marca": "Chevrolet",
         "km": 75000,
         "cor": "branco",
-        "valor": 66500.00
+        "valor": 66500,
+        "portas": 2,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -45,7 +85,28 @@
         "marca": "Chevrolet",
         "km": 35000,
         "cor": "vermelho",
-        "valor": 18000.00
+        "valor": 18000,
+        "portas": 4,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -63,7 +124,25 @@
         "marca": "Wolkswagen",
         "km": 62000,
         "cor": "azul",
-        "valor": 21000.00
+        "valor": 21000,
+        "portas": 2,
+        "estado": 2,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -81,7 +160,28 @@
         "marca": "Honda",
         "km": 88000,
         "cor": "preto",
-        "valor": 27600.00
+        "valor": 27600,
+        "portas": 4,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -99,7 +199,21 @@
         "marca": "Honda",
         "km": 35000,
         "cor": "branco",
-        "valor": 25000.00
+        "valor": 25000,
+        "portas": 2,
+        "estado": 2,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": false,
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -117,7 +231,24 @@
         "marca": "Hyundai",
         "km": 32000,
         "cor": "vermelho",
-        "valor": 38000.00
+        "valor": 38000,
+        "portas": 4,
+        "estado": 2,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": false,
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -135,7 +266,26 @@
         "marca": "Chevrolet",
         "km": 0,
         "cor": "cinza",
-        "valor": 33900.00
+        "valor": 33900,
+        "portas": 4,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -153,7 +303,24 @@
         "marca": "Ford",
         "km": 15000,
         "cor": "azul",
-        "valor": 27000.00
+        "valor": 27000,
+        "portas": 4,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": false,
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -171,7 +338,21 @@
         "marca": "Chevrolet",
         "km": 32000,
         "cor": "roxo",
-        "valor": 34000.00
+        "valor": 34000,
+        "portas": 2,
+        "estado": 2,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": false,
+        "acessorios": [
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -189,7 +370,25 @@
         "marca": "Ford",
         "km": 65000,
         "cor": "preto",
-        "valor": 39600.00
+        "valor": 39600,
+        "portas": 2,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -207,7 +406,28 @@
         "marca": "Toyota",
         "km": 45000,
         "cor": "prata",
-        "valor": 54300.00
+        "valor": 54300,
+        "portas": 2,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -225,7 +445,20 @@
         "marca": "Toyota",
         "km": 25000,
         "cor": "branco",
-        "valor": 62300.00
+        "valor": 62300,
+        "portas": 2,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": []
       },
       "geometry": {
         "type": "Point",
@@ -243,7 +476,16 @@
         "marca": "Hyundai",
         "km": 36000,
         "cor": "prata",
-        "valor": 98000.00
+        "valor": 98000,
+        "portas": 2,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": false,
+        "acessorios": []
       },
       "geometry": {
         "type": "Point",
@@ -261,7 +503,20 @@
         "marca": "Wolkswagen",
         "km": 80000,
         "cor": "verde",
-        "valor": 25000.00
+        "valor": 25000,
+        "portas": 2,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": []
       },
       "geometry": {
         "type": "Point",
@@ -279,7 +534,28 @@
         "marca": "Ford",
         "km": 54000,
         "cor": "preto",
-        "valor": 25000.00
+        "valor": 25000,
+        "portas": 4,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -297,7 +573,25 @@
         "marca": "Wolkswagen",
         "km": 80000,
         "cor": "azul",
-        "valor": 25000.00
+        "valor": 25000,
+        "portas": 4,
+        "estado": 2,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
@@ -315,7 +609,28 @@
         "marca": "Chevrolet",
         "km": 8000,
         "cor": "vermelho",
-        "valor": 25000.00
+        "valor": 25000,
+        "portas": 4,
+        "estado": 1,
+        "contato": {
+          "nomeCompleto": "Nome Completo do Proprietário",
+          "telefone": "(51) 9999-9999",
+          "email": "email@email.com"
+        },
+        "fotos": [
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"},
+          {"nome": "build/img/car.jpg"}
+        ],
+        "acessorios": [
+          {"nome": "Ar-Condicionando"},
+          {"nome": "Direção Hidráulica"},
+          {"nome": "Vidros Elétricos"},
+          {"nome": "Travas Elétricas"},
+          {"nome": "Bancos em Couro"},
+          {"nome": "Multi Media"},
+          {"nome": "Automático"}
+        ]
       },
       "geometry": {
         "type": "Point",
